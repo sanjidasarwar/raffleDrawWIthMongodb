@@ -1,7 +1,8 @@
 const router =require('express').Router()
 
 const {
-    sellSingleTicket
+    sellSingleTicket,
+    sellBulkTickets
 } = require('../controller/ticket')
 
 
@@ -12,5 +13,7 @@ router.route('/').get((req, res)=>{
         message: 'hello'
     })
 })
+
+router.post('/bulk', sellBulkTickets)  
 
 module.exports = router
